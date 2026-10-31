@@ -21,10 +21,10 @@ async function postNewMessage(newMessage) {
     const message = {
         text : newMessage.message,
         user : newMessage.user,
-        date : new Date()
+        added : newMessage.date
     }
 
-    messages.concat(message);
+    messages.push(message);
 
     return true;
 }

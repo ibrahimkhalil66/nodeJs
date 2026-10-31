@@ -28,14 +28,15 @@ async function postNewMessage(req,res) {
 
         const message = {
             message: body.message,
-            user: body.user
+            user: body.user,
+            date: new Date()
         }
 
         const isAdded = await db.postNewMessage(message)
 
         if(!isAdded) throw new Error;
 
-        res.redirect("/")
+        res.redirect("/messages")
     } catch(error) {
         res.status(500).send("Internal Server Error");
     }

@@ -5,7 +5,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const messagesRouter = require("./routes/messagesRouter.js");
+const {messagesRouter} = require("./routes/messagesRouter.js");
 
 
 app.use("/messages",messagesRouter)
